@@ -1,7 +1,6 @@
 import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
-import compression from 'compression'
 import routes from './common/routes'
 import unknownEndpoint from './middlewares/unknownEndpoint'
 
@@ -14,7 +13,6 @@ const app: Application = express()
 app.disable('x-powered-by')
 app.use(cors())
 app.use(helmet())
-app.use(compression())
 app.use(
   express.urlencoded({
     extended: true,
